@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        nav {
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #764ba2;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            background: white;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .project-card h3 {
+            color: #764ba2;
+            margin-bottom: 1rem;
+        }
+
+        .project-status {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: #ffd700;
+            color: #333;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.3s;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background: #764ba2;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            section {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Your Name</h1>
+        <p>Developer | Researcher | Educator</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                Welcome! I'm passionate about using technology to create meaningful educational experiences 
+                and data visualizations that help people understand complex historical and contemporary issues.
+            </p>
+            <p style="margin-top: 1rem;">
+                With a background in [your background], I'm exploring the intersection of technology, 
+                education, and social awareness through interactive web-based projects.
+            </p>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Temporal-Spatial Genocide Narrative</h3>
+                    <p>
+                        An interactive 3D visualization mapping genocides across time and space, 
+                        designed for educational purposes and comparative analysis. Features a 
+                        globe-based view with temporal vectors and a traditional 2D timeline.
+                    </p>
+                    <span class="project-status">In Development</span>
+                    <br>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>Future Project 2</h3>
+                    <p>
+                        Description of your next project will go here. This template is designed 
+                        to grow with you as you add more work.
+                    </p>
+                    <span class="project-status">Planned</span>
+                </div>
+
+                <div class="project-card">
+                    <h3>Future Project 3</h3>
+                    <p>
+                        Another project space ready for when you expand your portfolio.
+                    </p>
+                    <span class="project-status">Planned</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <p>
+                I'm always interested in connecting with others working on meaningful projects.
+            </p>
+            <p style="margin-top: 1rem;">
+                Email: your.email@example.com<br>
+                GitHub: <a href="https://github.com/yourusername">@yourusername</a>
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Your Name. Built with HTML, CSS, and JavaScript.</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="https://github.com/yourusername">GitHub</a> | 
+            <a href="https://linkedin.com/in/yourprofile">LinkedIn</a>
+        </p>
+    </footer>
+</body>
+</html>
