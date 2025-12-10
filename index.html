@@ -3,11 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Genocides: A Temporal Spatial Narrative</title>
-    
-    <!-- Timeline Library CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/vis-timeline@7.7.3/styles/vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
-    
+    <title>Ashley Everett - Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -34,179 +30,139 @@
             font-weight: 400;
             letter-spacing: 0.5px;
             color: #333;
-            margin-bottom: 0.5rem;
         }
 
-        header p {
-            color: #666;
-            font-size: 0.95rem;
+        nav {
+            background: white;
+            padding: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        .back-link {
-            display: inline-block;
-            margin: 1rem 0 0 2rem;
-            color: #2d4a2d;
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+        }
+
+        nav a {
             text-decoration: none;
-            font-size: 0.9rem;
+            color: #2d4a2d;
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            letter-spacing: 0.3px;
         }
 
-        .back-link:hover {
+        nav a:hover {
             color: #1a3a1a;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 3rem 2rem;
         }
 
-        .intro {
+        section {
             background: white;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border: 1px solid #e0e0e0;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
             border-radius: 2px;
+            border: 1px solid #e0e0e0;
         }
 
-        .intro h2 {
+        h2 {
             color: #2d4a2d;
-            font-size: 1.3rem;
-            font-weight: 400;
-            margin-bottom: 1rem;
-        }
-
-        .intro p {
-            color: #666;
-            margin-bottom: 1rem;
-        }
-
-        #timeline {
-            border: 1px solid #e0e0e0;
-            border-radius: 2px;
-            height: 400px;
-            background: white;
-        }
-
-        .event-details {
-            background: white;
-            padding: 2rem;
-            margin-top: 2rem;
-            border: 1px solid #e0e0e0;
-            border-radius: 2px;
-            display: none;
-        }
-
-        .event-details.active {
-            display: block;
-        }
-
-        .event-details h3 {
-            color: #2d4a2d;
-            font-size: 1.3rem;
-            font-weight: 500;
-            margin-bottom: 1rem;
-        }
-
-        .event-details .meta {
-            color: #666;
-            font-size: 0.9rem;
             margin-bottom: 1.5rem;
-            font-style: italic;
+            font-size: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
         }
 
-        .event-details p {
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 2px;
+            padding: 1.75rem;
+            background: #fafafa;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+
+        .project-card h3 {
             color: #333;
             margin-bottom: 1rem;
-        }
-
-        .sources {
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #e0e0e0;
-        }
-
-        .sources h4 {
-            color: #2d4a2d;
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 500;
-            margin-bottom: 0.5rem;
         }
 
-        .sources ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .sources li {
+        .project-card p {
+            font-size: 0.95rem;
             color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 0.3rem;
+            line-height: 1.6;
         }
 
-        .sources a {
+        .project-status {
+            display: inline-block;
+            padding: 0.35rem 0.9rem;
+            background: #2d4a2d;
+            color: white;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-top: 1rem;
+            letter-spacing: 0.3px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.65rem 1.5rem;
+            background: #2d4a2d;
+            color: white;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: background 0.3s;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
+        }
+
+        .btn:hover {
+            background: #1a3a1a;
+        }
+
+        footer {
+            background: white;
+            color: #666;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            border-top: 1px solid #e0e0e0;
+            font-size: 0.9rem;
+        }
+
+        footer a {
             color: #2d4a2d;
             text-decoration: none;
+            transition: color 0.3s;
         }
 
-        .sources a:hover {
+        footer a:hover {
             color: #1a3a1a;
-            text-decoration: underline;
-        }
-
-        /* Collapsible stages styling */
-        .stage-header {
-            cursor: pointer;
-            padding: 1rem;
-            background: #f5f5f5;
-            border: 1px solid #e0e0e0;
-            border-radius: 2px;
-            margin-bottom: 0.5rem;
-            transition: background 0.2s;
-        }
-
-        .stage-header:hover {
-            background: #e8e8e8;
-        }
-
-        .stage-header-title {
-            color: #2d4a2d;
-            font-weight: 600;
-            margin-bottom: 0.3rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .stage-header-goal {
-            color: #666;
-            font-size: 0.9rem;
-            font-style: italic;
-        }
-
-        .expand-icon {
-            color: #2d4a2d;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-
-        .stage-content {
-            display: none;
-            padding: 1rem;
-            padding-left: 2rem;
-            border-left: 3px solid #2d4a2d;
-            margin-bottom: 1rem;
-            margin-left: 1rem;
-        }
-
-        .stage-content.expanded {
-            display: block;
-        }
-
-        .stage-content p {
-            color: #333;
-            font-size: 0.95rem;
-            line-height: 1.7;
-            margin: 0;
         }
 
         @media (max-width: 768px) {
@@ -214,247 +170,98 @@
                 font-size: 1.5rem;
             }
 
-            .container {
-                padding: 1rem;
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
             }
 
-            #timeline {
-                height: 300px;
+            section {
+                padding: 2rem 1.5rem;
+            }
+
+            .container {
+                padding: 2rem 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <a href="index.html" class="back-link">← Back to Portfolio</a>
-
     <header>
-        <h1>Modern Genocides: A Temporal Spatial Narrative</h1>
-        <p>An educational exploration of genocide through time and space</p>
+        <h1>Ashley Everett</h1>
     </header>
 
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
     <div class="container">
-        <div class="intro">
-            <h2>About This Project</h2>
+        <section id="about">
+            <h2>About Me</h2>
             <p>
-                This interactive timeline maps major genocides of the modern era (20th-21st centuries) 
-                for educational and comparative analysis. Click on any event to learn more about the 
-                historical context, scale, and ongoing impact.
+                Welcome! I'm passionate about using technology to create meaningful educational experiences 
+                and data visualizations that help people understand complex historical and contemporary issues.
             </p>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Modern Genocides: A Temporal Spatial Narrative</h3>
+                    <p>
+                        An interactive 3D visualization mapping genocides across time and space, 
+                        designed for educational purposes and comparative analysis. Features a 
+                        globe-based view with temporal vectors and a traditional 2D timeline.
+                    </p>
+                    <span class="project-status">In Development</span>
+                    <br>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>Personal Existence: A Temporal Spatial Narrative</h3>
+                    <p>
+                        An exploration of personal stories and reflections on human 
+                        existence through an existentialist lens. Using the same interactive 3D visualization 
+                        approach to map moments, themes, and philosophical inquiries across time and space.
+                    </p>
+                    <span class="project-status">Planned</span>
+                </div>
+
+                <div class="project-card">
+                    <h3>Coming Soon</h3>
+                    <p>
+                        More projects in development. This space will be updated as new 
+                        visualizations and interactive experiences take shape.
+                    </p>
+                    <span class="project-status">Planned</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
             <p>
-                <strong>Note:</strong> This is a prototype showing the core timeline functionality. 
-                Future versions will include 3D spatial visualization and expanded educational content.
+                I'm always interested in connecting with others working on meaningful projects.
             </p>
-        </div>
-
-        <div id="timeline"></div>
-
-        <div id="event-details" class="event-details">
-            <!-- Details will be populated when an event is clicked -->
-        </div>
+            <p style="margin-top: 1rem;">
+                Email: aashleyeverett@gmail.com<br>
+                GitHub: <a href="https://github.com/aashleyeverett" style="color: #2d4a2d;">@aashleyeverett</a>
+            </p>
+        </section>
     </div>
 
-    <!-- Timeline Library JS -->
-    <script src="https://cdn.jsdelivr.net/npm/vis-timeline@7.7.3/standalone/umd/vis-timeline-graph2d.min.js"></script>
-
-    <script>
-        // Define the genocide events data
-        // You can add more events by following this structure
-        const events = [
-            {
-                id: 1,
-                content: 'Armenian Genocide',
-                start: '1915-04-24',
-                end: '1917-01-01',
-                location: 'Ottoman Empire (modern-day Turkey)',
-                estimatedDeaths: '1.5 million',
-                description: 'The systematic deportation and massacre of Armenians by the Ottoman Empire during World War I. Beginning with the arrest of Armenian intellectuals and community leaders in Constantinople, it escalated to mass deportations and death marches into the Syrian desert.',
-                context: 'During World War I, the Ottoman government accused Armenians of collaborating with Russia and used this as justification for mass deportations.',
-                sources: [
-                    'United States Holocaust Memorial Museum',
-                    'Armenian National Institute'
-                ]
-            },
-            {
-                id: 2,
-                content: 'The Holocaust',
-                start: '1933-01-30',
-                end: '1945-05-08',
-                location: 'Nazi Germany and Nazi-occupied Europe',
-                estimatedDeaths: '6 million Jews, 5 million others',
-                description: 'The systematic, state-sponsored persecution and murder of six million Jews by the Nazi regime and its collaborators. Also targeted were Roma, disabled individuals, Poles, Soviet prisoners of war, political opponents, and LGBTQ+ individuals. The Holocaust evolved through distinct stages, from discrimination to industrial extermination.',
-                context: 'The Holocaust was not a singular event but a process of escalating persecution that took over a decade. It began with legal discrimination, evolved through forced emigration and ghettoization, escalated to mass shootings, and culminated in industrialized genocide through extermination camps.',
-                stages: [
-                    {
-                        years: '1933-1938',
-                        stage: 'Discrimination',
-                        goal: 'Push Jews out of society and economy',
-                        details: 'Make life so impossible the Jews will leave on their own.<br><br>Key Events:<br>- Jews expelled from public service<br>- Book burnings<br>- Nuremberg Laws stripping Jews of citizenship (1935)<br>- Banning Jews from universities, professions, and marriages with non-Jews<br><br>This stage was about segregation, humiliation, and economic destruction. Preferred solution was emigration, not killing.'
-                    },
-                    {
-                        years: '1938-1940',
-                        stage: 'Forced Emigration',
-                        goal: 'Make Jews leave Germany',
-                        details: 'Forced emigration becomes policy, but the world refuses to take Jewish refugees.<br><br>By 1938:<br>- The Nazis escalated pressure (Kristallnacht)<br>- Jewish assets were seized<br>- Jews were told to leave Germany<br><br>But most countries refused to accept Jewish refugees.<br><br>1938 Évian Conference: 32 nations met and nearly all refused to increase immigration quotas. This convinced Nazi leadership: "No one wants the Jews, so we can do whatever we want with them."<br><br>At this point, Nazis still were not planning extermination.'
-                    },
-                    {
-                        years: '1939-1941',
-                        stage: 'Ghettos',
-                        goal: 'Contain Jewish populations in conquered areas',
-                        details: 'Conquest & Ghettos - millions of Jews suddenly under Nazi control.<br><br>1939 Germany invaded Poland:<br>- Suddenly ruled 2 million more Jews, far more than they ever expected<br>- Forced emigration became impossible<br><br>Nazis had no plan, so they improvised and created Ghettos:<br>- Jews were forced into overcrowded districts (Warsaw, Lodz, etc)<br>- Starvation level rations<br>- Forced labor<br>- Disease rampant<br><br>This was considered a "temporary holding system" for some future plan. Nazi thinking became more radical simply because they now controlled huge Jewish populations they didn\'t know what to do with.'
-                    },
-                    {
-                        years: 'Mid 1941',
-                        stage: 'Mass Shootings',
-                        goal: 'Begin systematic extermination in the USSR',
-                        details: 'Invasion of Soviet Union - Mass Shootings Begin.<br><br>June 1941 Operation Barbarossa changed everything.<br><br>Einsatzgruppen (mobile killing squads) followed the German Army and began mass shooting operations:<br>- Jews rounded up town by town, shot into pits, sometimes with local collaborators<br>- By end of 1941, greater than 1 million Jews were murdered by shooting<br><br>This is when Nazi leadership started talking seriously about extermination as a solution.<br><br>Why the shift?<br>- Ideological hatred reached peak during war against USSR<br>- Leadership radicalized under wartime conditions<br>- Shooting entire populations felt "acceptable" within the brutalized logic of the Eastern Front'
-                    },
-                    {
-                        years: 'Late 1941-1945',
-                        stage: 'Extermination Camps',
-                        goal: 'Industrial Genocide ("Final Solution")',
-                        details: 'Extermination Becomes Policy - The Final Solution.<br><br>Late 1941:<br>- Experiments with gas vans begin<br>- First extermination camps constructed (Chelmno, Belzec, Sobibor, Treblinka)<br><br>January 1942: The Wannsee Conference<br>Senior officials formalized plan:<br>- Deport all Jews to the east<br>- Kill them through labor, starvation, direct extermination<br>- Industrial scale murder<br><br>This was when the Nazi state solidified the shift to a continent-wide genocide.<br><br>1943: Operation Reinhard Ends<br>By late 1943, the Operation Reinhard camps (Belzec, Sobibor, Treblinka) had largely achieved their genocidal purpose. The Nazis:<br>- Shut down and demolished these camps<br>- Attempted to erase all evidence of mass murder<br>- Planted trees and built fake farms over the sites<br><br>Other camps like Auschwitz-Birkenau continued operations until 1945.'
-                    }
-                ],
-                sources: [
-                    'United States Holocaust Memorial Museum',
-                    'Yad Vashem'
-                ]
-            },
-            {
-                id: 3,
-                content: 'Cambodian Genocide',
-                start: '1975-04-17',
-                end: '1979-01-07',
-                location: 'Cambodia',
-                estimatedDeaths: '1.7-2 million',
-                description: 'The Khmer Rouge regime under Pol Pot attempted to create an agrarian socialist society, targeting educated people, ethnic minorities, and anyone perceived as opposition. The regime emptied cities, forced urban populations into labor camps, and executed suspected intellectuals.',
-                context: 'Following the Cambodian Civil War, the Khmer Rouge sought to transform Cambodia into a rural, classless society through forced labor and mass executions in the "killing fields."',
-                sources: [
-                    'Documentation Center of Cambodia',
-                    'Yale Cambodian Genocide Program'
-                ]
-            },
-            {
-                id: 4,
-                content: 'Rwandan Genocide',
-                start: '1994-04-07',
-                end: '1994-07-15',
-                location: 'Rwanda',
-                estimatedDeaths: '800,000-1 million',
-                description: 'In approximately 100 days, members of the Hutu majority murdered the Tutsi minority and moderate Hutus. The genocide was carefully planned and executed through radio propaganda, roadblocks, and systematic house-to-house killings.',
-                context: 'Decades of ethnic tensions, colonialism, and political manipulation culminated in the shooting down of President Habyarimana\'s plane, which triggered coordinated mass killings.',
-                sources: [
-                    'United Nations',
-                    'Kigali Genocide Memorial'
-                ]
-            },
-            {
-                id: 5,
-                content: 'Srebrenica Massacre',
-                start: '1995-07-11',
-                end: '1995-07-22',
-                location: 'Srebrenica, Bosnia and Herzegovina',
-                estimatedDeaths: '8,000+',
-                description: 'During the Bosnian War, Bosnian Serb forces systematically murdered more than 8,000 Bosniak (Bosnian Muslim) men and boys in and around the town of Srebrenica. It was the worst atrocity in Europe since World War II.',
-                context: 'Despite being designated a UN "safe area," Srebrenica fell to Bosnian Serb forces who separated men and boys from women and children before executing them in a campaign of ethnic cleansing.',
-                sources: [
-                    'International Criminal Tribunal for the former Yugoslavia',
-                    'Srebrenica Memorial Center'
-                ]
-            }
-        ];
-
-        // Create a timeline
-        const container = document.getElementById('timeline');
-        const items = new vis.DataSet(events);
-        
-        const options = {
-            width: '100%',
-            height: '100%',
-            margin: {
-                item: 20
-            },
-            orientation: 'top',
-            showCurrentTime: false,
-            min: new Date(1900, 0, 1),  // Start at January 1, 1900
-            max: new Date(2025, 11, 31)  // End at December 31, 2025
-        };
-
-        const timeline = new vis.Timeline(container, items, options);
-
-        // Handle event selection
-        timeline.on('select', function(properties) {
-            const eventId = properties.items[0];
-            if (eventId) {
-                const event = events.find(e => e.id === eventId);
-                displayEventDetails(event);
-            }
-        });
-
-        // Function to display event details
-        function displayEventDetails(event) {
-            const detailsDiv = document.getElementById('event-details');
-            
-            // Extract just the year from dates
-            const startYear = event.start.split('-')[0];
-            const endYear = event.end.split('-')[0];
-            
-            let stagesHTML = '';
-            if (event.stages) {
-                stagesHTML = `
-                    <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #e0e0e0;">
-                        <h4 style="color: #2d4a2d; font-size: 1.1rem; font-weight: 500; margin-bottom: 1.5rem;">Stages of Escalation (click to expand):</h4>
-                        ${event.stages.map((stage, index) => `
-                            <div class="stage-wrapper">
-                                <div class="stage-header" onclick="toggleStage(${index})">
-                                    <div class="stage-header-title">
-                                        <span>${stage.years}: ${stage.stage}</span>
-                                        <span class="expand-icon" id="icon-${index}">+</span>
-                                    </div>
-                                    <div class="stage-header-goal">Nazi Goal: ${stage.goal}</div>
-                                </div>
-                                <div class="stage-content" id="stage-${index}">
-                                    <p>${stage.details}</p>
-                                </div>
-                            </div>
-                        `).join('')}
-                    </div>
-                `;
-            }
-            
-            detailsDiv.innerHTML = `
-                <h3>${event.content}</h3>
-                <div class="meta">
-                    ${event.location} | ${startYear} to ${endYear} | Estimated deaths: ${event.estimatedDeaths}
-                </div>
-                <p><strong>Overview:</strong> ${event.description}</p>
-                <p><strong>Historical Context:</strong> ${event.context}</p>
-                ${stagesHTML}
-                <div class="sources">
-                    <h4>Sources & Further Reading:</h4>
-                    <ul>
-                        ${event.sources.map(source => `<li>${source}</li>`).join('')}
-                    </ul>
-                </div>
-            `;
-            
-            detailsDiv.classList.add('active');
-            detailsDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
-
-        // Function to toggle stage expansion
-        function toggleStage(index) {
-            const content = document.getElementById(`stage-${index}`);
-            const icon = document.getElementById(`icon-${index}`);
-            
-            if (content.classList.contains('expanded')) {
-                content.classList.remove('expanded');
-                icon.textContent = '+';
-            } else {
-                content.classList.add('expanded');
-                icon.textContent = '−';
-            }
-        }
-    </script>
+    <footer>
+        <p>&copy; 2025 Ashley Everett. Built with HTML, CSS, and JavaScript.</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="https://github.com/aashleyeverett">GitHub</a> | 
+            <a href="https://linkedin.com/in/yourprofile">LinkedIn</a>
+            <a href="https://github.com/aashleyeverett">GitHub</a>
+        </p>
+    </footer>
 </body>
 </html>
